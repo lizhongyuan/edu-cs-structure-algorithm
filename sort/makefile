@@ -1,15 +1,20 @@
 CC = g++
 CFLAGS = -g -Wall -O
 
-OBJECT = main.o insert_sort.o
+SOURCES = $(wildcard *.cpp)
 
-main: $(OBJECT)
+OBJECT = $(patsubst %cpp, %o, $(SOURCES))
+
+TARGET = main
+
+$(TARGET): $(OBJECT)
 	$(CC) $(OBJECT) -o main
 
-%.o: %.cpp
+#%.o: %.cpp
+$(OBJECT): $(SOURCES)
 	$(CC) $(CFLAGS) -c $^
 
 .PHONY : clean
 
 clean :
-	rm main main.o insert_sort.o
+	rm $(TARGET) $(OBJECT)
