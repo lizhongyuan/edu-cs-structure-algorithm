@@ -21,13 +21,13 @@ void array_show(int *arr, int array_size) {
 
 int main(int argc, char** argv) {
 
+    array_show(arr, array_size);
+
+    heap_sort(arr, array_size); // 快速排序
+    // quick_sort(arr, 0, array_size - 1); // 快速排序
     // insert_sort(arr, array_size); // 插入排序
     // select_sort(arr, array_size); // 选择排序
     // bubble_sort(arr, array_size); // 选择排序
-
-    array_show(arr, array_size);
-
-    quick_sort(arr, 0, array_size - 1);
 
     array_show(arr, array_size);
 

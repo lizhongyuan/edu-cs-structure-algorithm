@@ -7,8 +7,12 @@
 
 
 void bubble_sort(int *arr, int arr_size);
+
 void insert_sort(int *arr, int arr_size);
+
 void quick_sort(int *arr, int begin, int end);
+
+void heap_sort(int* array, int array_size);
 
 
 #endif //EDU_CS_STRUCTURE_ALGORITHM_SORT_H
