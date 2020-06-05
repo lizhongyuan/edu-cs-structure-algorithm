@@ -5,6 +5,6 @@
 #include "swap.h"
 
 
-void merge_sort(int *arr, array_size) {
+void merge_sort(int *arr, int array_size) {
 
 }

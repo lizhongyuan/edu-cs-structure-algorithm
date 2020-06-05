@@ -13,7 +13,7 @@ void swap(int *a, int *b) {
     *b = tmp;
 }
 
-void min_by_ptr(int *ptr1, int *ptr2) {
+int* min_by_ptr(int *ptr1, int *ptr2) {
 
     if (*ptr1 <= *ptr2) {
         return ptr1;

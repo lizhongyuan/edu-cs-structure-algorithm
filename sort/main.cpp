@@ -5,13 +5,15 @@
 using namespace std;
 
 
-int arr[] = { 1, 4, 2, 8, 5, 7 };
+// int arr[] = { 1, 4, 2, 8, 5, 7 };
+int arr[] = { 8, 4, 2, 1, 5, 7 };
+// int arr[] = { 2, 4, 1 };
 int array_size = sizeof(arr) / sizeof(int);
 
 
 void array_show(int *arr, int array_size) {
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < array_size; i++) {
         cout<<arr[i]<<" ";
     }
 
