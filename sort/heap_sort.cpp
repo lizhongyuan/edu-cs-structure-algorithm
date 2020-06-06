@@ -1,45 +1,63 @@
 #include "swap.h"
 #include "iostream"
 
+
 using namespace std;
 
 
-void build_heap(int* array, int array_size);
+void build_heap(int* arr, int arr_size) {
 
+  int edge_pos = (arr_size - 2) / 2;
 
-void heap_sort(int* array, int array_size) {
+  for (int i = edge_pos; i >= 0; i--) {
 
-    build_heap(array, array_size);
+    for (int j = i; j <= edge_pos; ) {
+
+      int left_child_idx = 2 * j + 1;
+      int right_child_idx = 2 * j + 2;
+
+      int min_child_idx;
+
+      if (left_child_idx >= arr_size) {
+        break;
+      } else if (right_child_idx >= arr_size) {
+        min_child_idx = left_child_idx;
+      } else {
+        if (arr[left_child_idx] >= arr[right_child_idx]) {
+          min_child_idx = right_child_idx;
+        } else {
+          min_child_idx = left_child_idx;
+        }
+      }
+
+      if (arr[j] > arr[min_child_idx]) {
+        swap(arr + j, arr + min_child_idx);
+      }
+
+      j = min_child_idx; // next step
+    }
+  }
 }
 
 
-void build_heap(int* array, int array_size) {
+void heap_sort(int* arr, int arr_size) {
 
-    cout<<"array_size:"<<array_size<<endl;
+  int *tmp = new int[arr_size]();
+  for (int i = 0; i < arr_size; i++) {
+    tmp[i] = arr[i];
+  }
 
-    int edge_pos = (array_size - 2) / 2;
+  for (int i = 0; i < arr_size; i++) {
 
-    cout<<"edge_pos:"<<edge_pos<<endl;
+    int cur_heap_size = arr_size - i;
+    int heap_end_idx = arr_size - 1 - i;
 
-    for (int i = edge_pos; i >= 0; i--) {
-        for (int j = i; j <= edge_pos; ) {
-            int left_child_idx = 2 * j + 1;
-            int right_child_idx = 2 * j + 2;
+    build_heap(tmp, cur_heap_size);
 
-            int min_child_idx;
-            if (array[left_child_idx] >= array[right_child_idx]) {
-                min_child_idx = right_child_idx;
-            } else {
-                min_child_idx = left_child_idx;
-            }
+    arr[i] = tmp[0];
 
-            cout<<"min_child_idx:"<<min_child_idx<<endl;
+    swap(tmp, tmp + heap_end_idx);
+  }
 
-            if (array[j] > array[min_child_idx]) {
-                swap(array + j, array + min_child_idx);
-            }
-
-            j = min_child_idx;
-        }
-    }
+  delete[] tmp;
 }
