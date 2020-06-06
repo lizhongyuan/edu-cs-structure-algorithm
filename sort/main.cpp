@@ -5,9 +5,7 @@
 using namespace std;
 
 
-// int arr[] = { 1, 4, 2, 8, 5, 7 };
 int arr[] = { 8, 4, 2, 1, 5, 7 };
-// int arr[] = { 2, 4, 1 };
 int array_size = sizeof(arr) / sizeof(int);
 
 
