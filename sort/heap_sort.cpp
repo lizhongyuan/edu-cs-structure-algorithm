@@ -1,8 +1,4 @@
-#include "swap.h"
-#include "iostream"
-
-
-using namespace std;
+#include "util.h"
 
 
 void build_heap(int* arr, int arr_size) {
