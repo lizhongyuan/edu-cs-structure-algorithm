@@ -8,15 +8,16 @@
 
 class LinkNode {
 
-private:
+// private:
+public:
   int data;
 
   LinkNode *next;
 
   LinkNode *prev;
 
-public:
-  LinkNode();
+// public:
+  LinkNode(int data);
 
   int getData() { return data; }
 

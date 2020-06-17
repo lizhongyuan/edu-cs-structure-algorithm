@@ -8,11 +8,12 @@
 
 class LinkList {
 
-private:
+// private:
+public:
   LinkNode* head;
   int length;
 
-public:
+// public:
 
   LinkList();
 
@@ -22,7 +23,7 @@ public:
 
   void show();
 
-  bool insert(int pos, int data);
+  bool insert(int pos, LinkNode* node);
 };
 
 

@@ -9,7 +9,9 @@
 using namespace std;
 
 
-LinkNode::LinkNode() {
+LinkNode::LinkNode(int pData) {
+
+  data = pData;
 
   next = NULL;
   prev = NULL;

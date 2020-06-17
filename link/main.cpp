@@ -12,11 +12,16 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-  LinkList* linkList = new LinkList();
+  auto* linkList = new LinkList();
 
   int linkLen = linkList->getLength();
-
   cout<<"linkLen:"<<linkLen<<endl;
+
+  linkList->show();
+
+  auto * node = new LinkNode(1);
+
+  linkList->insert(0, node);
 
   linkList->show();
 }
